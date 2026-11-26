@@ -11,10 +11,10 @@ public class Main {
 		studenten[2] = new Student("Rausch", "Alexander", "WINF", 44);
 		studenten[3] = new Student("Pado", "Ulrike", "WINF", 41);
 		studenten[4] = new Student("Knauth", "Stefan", "INF", 48);
-		studenten[5] = new Student("Mosler", "Christof", "WINF", 47);
+		studenten[5] = new Student( 555, "Christof", "WINF", 47);
 		
 		for(Student s : studenten) {
-			Student.format(s);
+			Student.format(s)
 		}
 		System.out.println();
 
