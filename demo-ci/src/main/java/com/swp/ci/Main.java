@@ -15,7 +15,7 @@ public class Main {
 		studenten[5] = new Student( 555, "Christof", "WINF", 47);
 		
 		for(Student s : studenten) {
-			Student.format(s)
+			Student.format(s);
 		}
 		System.out.println();
 
