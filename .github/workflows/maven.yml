@@ -16,26 +16,25 @@ on:
   workflow_dispatch: 
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
+  job:
+      runs-on: ubuntu-latest
 
-    steps:
-    - uses: actions/checkout@v4
-    - name: Set up JDK 17
-      uses: actions/setup-java@v4
-      with:
-        java-version: '17'
-        distribution: 'temurin'
-        cache: maven
+      steps:
+      - uses: actions/checkout@v5
+      - name: Set up JDK 17
+        uses: actions/setup-java@v5
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+          cache: maven
    
-    - name: Build and Test with Maven
-      run: mvn -B -e verify
+      - name: Build and Test with Maven
+        run: mvn -B -e verify
 
-    - name: Upload build artifact
-      uses: actions/upload-artifact@v4
-      with:
-        name: demo-ci-jar
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v5
+        with:
+            name: demo-ci-jar
           # "uses" steps ignore working-directory, so the folder must be in the path
-        path: demo-ci/target/*.jar
-        if-no-files-found: warn
-   
+            path: demo-ci/target/*.jar
+          if-no-files-found: warn
