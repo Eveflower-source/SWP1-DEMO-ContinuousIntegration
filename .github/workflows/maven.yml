@@ -42,7 +42,7 @@ jobs:
         uses: actions/upload-artifact@v6
         with:
           name: demo-ci-jar
-          path: /*.jar
+          path: target/demo-ci-1.0-SNAPSHOT.jar
           if-no-files-found: warn
 
   job3:
