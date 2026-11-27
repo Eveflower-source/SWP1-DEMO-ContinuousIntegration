@@ -23,7 +23,7 @@ public class Main {
 		Arrays.sort(studenten);
 		
 		for(Student s : studenten) {
-			Student.format(s);
+			Student.format(s)
 		}
 	}
 }
