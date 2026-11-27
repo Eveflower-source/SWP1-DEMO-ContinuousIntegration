@@ -15,7 +15,14 @@ on:
   workflow_dispatch:
 
 jobs:
+
   job1:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Workflow run was triggered"
+      
+  job2:
+    name: "Build and Test"
     runs-on: ubuntu-latest
 
     steps:
@@ -38,7 +45,8 @@ jobs:
           path: demo-ci/target/*.jar
           if-no-files-found: warn
 
-  job2:
+  job3:
+    needs: job2
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Job2"
+      - run: echo "${{ job.status }}"
